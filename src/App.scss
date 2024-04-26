@@ -1,0 +1,178 @@
+/* Root and Base Styles */
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kode+Mono:wght@400..700&display=swap");
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	//font-family: "Cabin", sans-serif;
+	font-family: "Kode Mono", monospace;
+}
+:root {
+	--bg-color: #222222;
+	--nav-bg-color: #000000;
+	--text-color: #f2ecff;
+	--accent-color: #992097; // Bright green for high visibility
+	--background-dark: #333; // Dark background for contrast
+	--shadow-color: #ffc107; // Black for deep shadows
+}
+html,
+body,
+#root {
+	margin: 0;
+	padding: 0;
+	width: 100vw;
+	background-color: var(--bg-color);
+	color: var(--text-color);
+}
+
+.text__accent {
+	color: var(--accent-color);
+}
+.text__shadow {
+	color: var(--shadow-color);
+}
+
+/* Color Variables */
+
+/* Sidebar Styles */
+.mySidebar {
+	height: 100vh;
+	width: 100%;
+	background-color: var(--nav-bg-color);
+	color: var(--text-color);
+	padding-top: 20px;
+	position: sticky;
+	top: 0;
+	z-index: 200;
+	box-shadow: 5px 0px 0 0 var(--shadow-color);
+}
+
+@media screen and (max-width: 700px) {
+	.mySidebar {
+		height: 80px;
+		width: 95%;
+		margin: 2% auto;
+		box-shadow: 3px 3px 0 0 var(--shadow-color);
+	}
+}
+
+/* Button Styles */
+.btn-outline-accent {
+	background-color: transparent;
+	border: 3px solid var(--accent-color);
+	color: var(--accent-color);
+	padding: 12px 24px;
+	font-size: 1rem;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+
+	&:hover {
+		background-color: var(--accent-color);
+		color: white !important;
+		transform: scale(1.05);
+		box-shadow: 5px 5px 0 0 var(--shadow-color); // Solid shadow on hover
+	}
+
+	&:active {
+		background-color: var(--background-dark);
+		color: var(--accent-color);
+		border-color: var(--background-dark);
+		transform: scale(0.95);
+		box-shadow: 5px 5px 0 0 var(--shadow-color); // Maintain shadow on active
+	}
+
+	&.active {
+		background-color: var(--accent-color);
+		color: var(--text-color);
+		border-color: var(--accent-color);
+		transform: scale(1.05);
+		box-shadow: 5px 5px 0 0 var(--shadow-color); // Maintain shadow on active
+	}
+}
+
+/* Content Area Styles */
+.myContent {
+	width: 100%;
+	height: 100vh;
+	background-color: var(--bg-color);
+	color: var(--text-color);
+}
+
+@media screen and (max-width: 700px) {
+	.myContent {
+		width: 95vw;
+		margin: 0 auto;
+		border-radius: 0.5rem;
+	}
+}
+
+/* Full Page Container */
+.fullpage-container {
+	height: 100vh;
+	overflow-y: scroll;
+	scroll-snap-type: y mandatory;
+}
+
+.fullpage-section {
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	scroll-snap-align: start;
+	margin: 0; // Ensure no external margins
+	padding: 0; // Ensure no internal padding
+}
+@media screen and (max-width: 700px) {
+	.fullpage-section {
+		align-items: stretch;
+	}
+}
+
+//me component
+
+.meImg {
+	object-fit: cover;
+	max-width: 500px;
+	max-height: 500px;
+	box-shadow: 10px 10px 0 0 var(--shadow-color);
+}
+@media screen and (max-width: 700px) {
+	.meImg {
+		max-width: 150px;
+		max-height: 150px;
+	}
+}
+
+//// tech component
+
+@media screen and (max-width: 700px) {
+	.Technologies {
+		margin-top: -3rem;
+	}
+}
+.techCard {
+	color: var(--text-color);
+	box-shadow: 5px 5px 0 0 var(--shadow-color);
+}
+@media screen and (max-width: 700px) {
+	.techCard {
+		box-shadow: 3px 3px 0 0 var(--shadow-color);
+		& h5 {
+			font-size: 0.9rem;
+		}
+	}
+}
+
+//project component
+.text-truncate {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.clickedCard {
+	color: var(--text-color);
+	border: 5px solid var(--accent-color);
+}
