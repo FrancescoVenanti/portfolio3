@@ -5,7 +5,7 @@ const MeComponent = () => {
 	const words = ["projects.", "skills.", "journey."];
 
 	return (
-		<div className=" d-flex justify-content-start justify-content-lg-around align-items-center flex-column flex-lg-row">
+		<div className=" d-flex justify-content-start justify-content-lg-around align-items-center flex-column flex-lg-row mt80">
 			<div className=" d-flex justify-content-center align-items-start m-2 m-lg-5 bg-white">
 				<img src={avatar} alt="Francesco Venanti" className=" meImg" />
 			</div>

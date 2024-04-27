@@ -5,7 +5,7 @@ import cv from "../assets/CvEnglish.pdf";
 
 const Contacts = () => {
 	return (
-		<div className="my-auto ">
+		<div className="contacts mt-5 mt80">
 			<div className="container d-flex flex-column align-items-center mh-100 ">
 				<h1 className="text__shadow display-3">CONTACTS</h1>
 				<div className=" d-flex align-items-center fs-4">

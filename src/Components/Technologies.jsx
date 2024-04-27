@@ -33,7 +33,7 @@ const Technologies = () => {
 	};
 
 	return (
-		<div className="container px-4 h-100 d-flex flex-column justify-content-center Technologies overflow-hidden">
+		<div className="container px-4 h-100 d-flex flex-column justify-content-center Technologies overflow-hidden mt80">
 			<h1 className="mb-0 text__shadow display-4">Technologies</h1>
 			<p className="lead text-white-50 mb-5">Try to drag the cards around!</p>
 			<motion.div

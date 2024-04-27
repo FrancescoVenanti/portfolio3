@@ -39,7 +39,7 @@ const MyWorks = () => {
 	];
 
 	return (
-		<div className="container">
+		<div className="container mt80">
 			<h2 className="display-5 text-center text__accent mb-lg-3">My Works</h2>
 			<div className="main-project">
 				{selectedId && (

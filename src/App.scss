@@ -54,7 +54,7 @@ body,
 	background-color: var(--nav-bg-color);
 	color: var(--text-color);
 	padding-top: 20px;
-	position: sticky;
+	position: fixed;
 	top: 0;
 	z-index: 200;
 	box-shadow: 5px 0px 0 0 var(--shadow-color);
@@ -64,7 +64,9 @@ body,
 	.mySidebar {
 		height: 80px;
 		width: 95%;
-		margin: 2% auto;
+		margin-top: 4px;
+		left: 50%;
+		transform: translateX(-50%);
 		box-shadow: 3px 3px 0 0 var(--shadow-color);
 	}
 }
@@ -144,7 +146,10 @@ body,
 @media screen and (max-width: 700px) {
 	.fullpage-section {
 		align-items: stretch;
-		height: calc(100vh - 80px);
+		height: calc(100vh - 80px); // Offset for sticky nav
+	}
+	.mt80 {
+		margin-top: 88px !important;
 	}
 }
 
@@ -221,4 +226,5 @@ body,
 		width: 70%;
 	}
 }
+
 //contact component
