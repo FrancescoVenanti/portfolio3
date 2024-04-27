@@ -32,6 +32,18 @@ body,
 .text__shadow {
 	color: var(--shadow-color);
 }
+.bg__accent {
+	background-color: var(--accent-color);
+}
+.bg__shadow {
+	background-color: var(--shadow-color);
+}
+.border__accent {
+	border: 2px solid var(--accent-color);
+}
+.shadow__accent {
+	box-shadow: 5px 5px 0 0 var(--accent-color);
+}
 
 /* Color Variables */
 
@@ -95,7 +107,7 @@ body,
 /* Content Area Styles */
 .myContent {
 	width: 100%;
-	height: 100vh;
+	height: 100vb;
 	background-color: var(--bg-color);
 	color: var(--text-color);
 }
@@ -113,21 +125,26 @@ body,
 	height: 100vh;
 	overflow-y: scroll;
 	scroll-snap-type: y mandatory;
+	scroll-behavior: smooth;
+}
+@media screen and (max-width: 700px) {
+	.fullpage-container {
+		scroll-snap-align: 80px; // Offset for sticky nav
+	}
 }
 
 .fullpage-section {
-	height: 100vh;
+	height: calc(100vb); // Offset for sticky nav
 	width: 100%;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	scroll-snap-align: start;
-	margin: 0; // Ensure no external margins
-	padding: 0; // Ensure no internal padding
 }
 @media screen and (max-width: 700px) {
 	.fullpage-section {
 		align-items: stretch;
+		height: calc(100vh - 80px);
 	}
 }
 
@@ -176,3 +193,27 @@ body,
 	color: var(--text-color);
 	border: 5px solid var(--accent-color);
 }
+
+.small-projects {
+	flex: 1;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Grid for smaller projects */
+	gap: 10px;
+}
+@media screen and (max-width: 700px) {
+	.small-projects {
+		grid-template-columns: repeat(2, 1fr); /* Creates exactly two columns */
+	}
+}
+
+.project-card {
+	cursor: pointer;
+	transition: transform 0.3s ease;
+}
+
+.project-image {
+	width: 80%;
+	height: auto;
+	display: block;
+}
+//contact component

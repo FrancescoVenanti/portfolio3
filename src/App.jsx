@@ -26,15 +26,12 @@ function App() {
 		const observer = new IntersectionObserver(
 			(entries) => {
 				entries.forEach((entry) => {
-					console.log(
-						entry.target.id,
-						"is intersecting:",
-						entry.isIntersecting,
-						"with ratio:",
-						entry.intersectionRatio
-					);
 					if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
-						setActiveSection(entry.target.id);
+						if (entry.target.id == "") {
+							setActiveSection("contacts");
+						} else {
+							setActiveSection(entry.target.id);
+						}
 					}
 				});
 			},
@@ -55,7 +52,7 @@ function App() {
 		{ id: "me", icon: faUser, text: "ME", component: <MeComponent /> },
 		{ id: "technologies", icon: faTools, text: "TECHNOLOGIES", component: <Technologies /> },
 		{ id: "works", icon: faBriefcase, text: "MY WORKS", component: <MyWorks /> },
-		{ id: "", icon: faEnvelope, text: "CONTACTS", component: <Contacts /> },
+		{ id: "contacts", icon: faEnvelope, text: "CONTACTS", component: <Contacts /> },
 	];
 
 	const scrollToSection = (sectionId) => {
@@ -80,7 +77,7 @@ function App() {
 					))}
 				</div>
 			</div>
-			<div className="col-12 col-md-9 col-xl-10">
+			<div className="col-12 col-md-9 col-xl-10 overflow-hidden">
 				<div className={`fullpage-container ${isMobile && "container"}`}>
 					{sections.map(({ id, component }) => (
 						<motion.div
