@@ -218,18 +218,18 @@ body,
 }
 
 .project-image {
-	max-width: 90%;
+	max-width: 80%;
 	height: auto;
 	display: block;
 }
 @media screen and (max-width: 1400px) {
 	.project-image {
-		max-width: 80%;
+		max-width: 70%;
 	}
 }
 @media screen and (max-width: 1200px) {
 	.project-image {
-		max-width: 70%;
+		max-width: 60%;
 	}
 }
 @media screen and (max-width: 700px) {
