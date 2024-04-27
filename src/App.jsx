@@ -83,7 +83,7 @@ function App() {
 						<motion.div
 							key={id}
 							id={id}
-							className="fullpage-section"
+							className={`fullpage-section ${activeSection === id ? "opacity-1" : "opacity-0"}`}
 							initial={{ opacity: 0 }}
 							animate={{ opacity: 1 }}
 							transition={{ duration: 0.5 }}
